@@ -1,0 +1,21 @@
+#define _GNU_SOURCE
+#include "raindrops.h"
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+void convert(char result[], int drops) {
+    sprintf(result, "%d", drops);
+    
+    char *ptr = result;
+    if (drops % 3 == 0) {
+        ptr = stpcpy(ptr, "Pling");
+    }
+    if (drops % 5 == 0) {
+        ptr = stpcpy(ptr, "Plang");
+    }
+    if (drops % 7 == 0) {
+        ptr = stpcpy(ptr, "Plong");
+    }
+}
